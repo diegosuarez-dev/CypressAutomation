@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-11-19T20:01:29.717Z",
+    "end": "2020-11-19T20:01:47.917Z",
+    "duration": 18200,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0daf4ea2-0d99-4108-aa2c-1f10e14e3be9",
+      "title": "",
+      "fullFile": "cypress\\integration\\TestFramework2.js",
+      "file": "cypress\\integration\\TestFramework2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "db0eb59b-2a42-400a-b5d1-f395e12069a3",
+          "title": "Test Framework 2 Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 1",
+              "fullTitle": "Test Framework 2 Suite Test Case 1",
+              "timedOut": null,
+              "duration": 14215,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var totalAmount = 0;\nshoppage.goToShop();\nloadedData.products.forEach(function (productName) {\n  cy.AddToCart(productName);\n});\nshoppage.getCheckoutButton().click();\nshoppage.getItemTotals().then(function (totals) {\n  totals.toArray().forEach(function (element) {\n    var valueInString = element.textContent.substring(3);\n    totalAmount += Number(valueInString);\n  });\n  shoppage.getCartTotal().should('have.text', \"\\u20B9. \".concat(totalAmount));\n});\nshoppage.getCheckoutButton().click();\nshoppage.getAgreeConditionsCheckbox().click({\n  force: true\n});\nshoppage.getCountryInput().type(loadedData.country.substring(0, 2));\ncy.contains(loadedData.country).click();\nshoppage.getCountryInput().should('have.value', loadedData.country);\nshoppage.getPurchaseButton().click();\nshoppage.getAlertMessage().should('include.text', 'Success! Thank you! Your order will be delivered in next few weeks :-)');",
+              "err": {},
+              "uuid": "deeea2c9-6be9-4c4a-b3d2-27ebdb0a8f33",
+              "parentUUID": "db0eb59b-2a42-400a-b5d1-f395e12069a3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "deeea2c9-6be9-4c4a-b3d2-27ebdb0a8f33"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14215,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}
