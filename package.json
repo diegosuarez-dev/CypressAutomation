@@ -11,8 +11,11 @@
     "mochawesome": "^6.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run": "cypress run"
+    "cyAll": "./node_modules/.bin/cypress run",
+    "cyHeadedAll": "npm run cyAll -- --headed",
+    "cyChromeAll": "npm run cyAll -- --browser chrome",
+    "cyMochawesomeAll": "npm run cyAll -- --reporter mochawesome",
+    "cyDashboardAll": "npm run cyAll -- --record --key 526c97d4-6aff-4992-bbb4-38b84c95ce40"
   },
   "keywords": [],
   "author": "diego",

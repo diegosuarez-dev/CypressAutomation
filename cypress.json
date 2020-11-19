@@ -4,5 +4,7 @@
   "env": {
     "url": "https://rahulshettyacademy.com"
   },
-  "projectId": "suabxx"
+  "projectId": "suabxx",
+  
+  "retries": 1  
 }
