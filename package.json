@@ -7,6 +7,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.12.1",
     "cypress": "^5.6.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
     "cypress-iframe": "^1.0.1",
     "mochawesome": "^6.2.1"
   },
@@ -16,6 +17,9 @@
     "cyChromeAll": "npm run cyAll -- --browser chrome",
     "cyMochawesomeAll": "npm run cyAll -- --reporter mochawesome",
     "cyDashboardAll": "npm run cyAll -- --record --key 526c97d4-6aff-4992-bbb4-38b84c95ce40"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   },
   "keywords": [],
   "author": "diego",
