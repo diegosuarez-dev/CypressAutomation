@@ -6,6 +6,5 @@
   },
   "projectId": "suabxx",
   
-  "retries": 1,
-  "testFiles": "**/*.feature"  
+  "retries": 1
 }

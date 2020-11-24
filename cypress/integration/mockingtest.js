@@ -4,14 +4,13 @@ describe('API Mocking Test', () => {
     it('Test case 1', () => {
         let message = 'whoa, this comment does not exist';
         cy.visit('https://example.cypress.io/commands/network-requests');
-        cy.intercept({
-            method: 'PUT',
-            url: '**/comments/*',
-          }, {
-            statusCode: 404,
-            body: { error: message },
-            headers: { 'access-control-allow-origin': '*' },
-            delayMs: 500,
+        cy.server();
+        cy.route({
+          method: 'PUT',
+          url: '**/comments/*',
+          status: 404,
+          response: { error: message },
+          delay: 500,
           }).as('putComment')
           
           // we have code that puts a comment when

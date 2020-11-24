@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@babel/preset-typescript": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.7",
     "cypress": "^5.6.0",
     "cypress-cucumber-preprocessor": "^4.0.0",
     "cypress-iframe": "^1.0.1",
